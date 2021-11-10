@@ -21,6 +21,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <NuGetPackageImportStamp>55ee76cb</NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -98,15 +100,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\eliteadmin\app-calendar.html" />
-    <Content Include="Content\eliteadmin\app-chat.html" />
-    <Content Include="Content\eliteadmin\app-compose.html" />
-    <Content Include="Content\eliteadmin\app-contact-detail.html" />
-    <Content Include="Content\eliteadmin\app-contact.html" />
-    <Content Include="Content\eliteadmin\app-contact2.html" />
-    <Content Include="Content\eliteadmin\app-email-detail.html" />
-    <Content Include="Content\eliteadmin\app-email.html" />
-    <Content Include="Content\eliteadmin\app-ticket.html" />
     <Content Include="Content\eliteadmin\assets\images\alert\alert.png" />
     <Content Include="Content\eliteadmin\assets\images\alert\alert2.png" />
     <Content Include="Content\eliteadmin\assets\images\alert\alert3.png" />
@@ -394,16 +387,6 @@
     <Content Include="Content\eliteadmin\assets\node_modules\x-editable\dist\bootstrap3-editable\img\clear.png" />
     <Content Include="Content\eliteadmin\assets\node_modules\x-editable\dist\bootstrap3-editable\img\loading.gif" />
     <Content Include="Content\eliteadmin\assets\node_modules\x-editable\dist\bootstrap3-editable\js\bootstrap-editable.js" />
-    <Content Include="Content\eliteadmin\chart-chart-js.html" />
-    <Content Include="Content\eliteadmin\chart-chartist.html" />
-    <Content Include="Content\eliteadmin\chart-echart.html" />
-    <Content Include="Content\eliteadmin\chart-extra-chart.html" />
-    <Content Include="Content\eliteadmin\chart-flot.html" />
-    <Content Include="Content\eliteadmin\chart-knob.html" />
-    <Content Include="Content\eliteadmin\chart-morris.html" />
-    <Content Include="Content\eliteadmin\chart-peity.html" />
-    <Content Include="Content\eliteadmin\chart-sparkline.html" />
-    <Content Include="Content\eliteadmin\cropped.html" />
     <Content Include="Content\eliteadmin\dist\css\pages\bootstrap-switch.css" />
     <Content Include="Content\eliteadmin\dist\css\pages\breadcrumb-page.css" />
     <Content Include="Content\eliteadmin\dist\css\pages\chat-app-page.css" />
@@ -457,112 +440,6 @@
     <Content Include="Content\eliteadmin\dist\js\perfect-scrollbar.jquery.min.js" />
     <Content Include="Content\eliteadmin\dist\js\sidebarmenu.js" />
     <Content Include="Content\eliteadmin\dist\js\waves.js" />
-    <Content Include="Content\eliteadmin\form-addons.html" />
-    <Content Include="Content\eliteadmin\form-basic.html" />
-    <Content Include="Content\eliteadmin\form-bootstrap-validation.html" />
-    <Content Include="Content\eliteadmin\form-bootstrapwysihtml5.html" />
-    <Content Include="Content\eliteadmin\form-dropzone.html" />
-    <Content Include="Content\eliteadmin\form-float-input.html" />
-    <Content Include="Content\eliteadmin\form-icheck.html" />
-    <Content Include="Content\eliteadmin\form-img-cropper.html" />
-    <Content Include="Content\eliteadmin\form-layout.html" />
-    <Content Include="Content\eliteadmin\form-mask.html" />
-    <Content Include="Content\eliteadmin\form-material.html" />
-    <Content Include="Content\eliteadmin\form-pickers.html" />
-    <Content Include="Content\eliteadmin\form-summernote.html" />
-    <Content Include="Content\eliteadmin\form-tinymce.html" />
-    <Content Include="Content\eliteadmin\form-typehead.html" />
-    <Content Include="Content\eliteadmin\form-upload.html" />
-    <Content Include="Content\eliteadmin\form-validation.html" />
-    <Content Include="Content\eliteadmin\form-wizard.html" />
-    <Content Include="Content\eliteadmin\form-xeditable.html" />
-    <Content Include="Content\eliteadmin\icon-flag.html" />
-    <Content Include="Content\eliteadmin\icon-fontawesome.html" />
-    <Content Include="Content\eliteadmin\icon-iconmind.html" />
-    <Content Include="Content\eliteadmin\icon-material.html" />
-    <Content Include="Content\eliteadmin\icon-simple-lineicon.html" />
-    <Content Include="Content\eliteadmin\icon-themify.html" />
-    <Content Include="Content\eliteadmin\icon-weather.html" />
-    <Content Include="Content\eliteadmin\index.html" />
-    <Content Include="Content\eliteadmin\index2.html" />
-    <Content Include="Content\eliteadmin\index3.html" />
-    <Content Include="Content\eliteadmin\index4.html" />
-    <Content Include="Content\eliteadmin\layout-boxed.html" />
-    <Content Include="Content\eliteadmin\layout-fix-header-sidebar.html" />
-    <Content Include="Content\eliteadmin\layout-fix-header.html" />
-    <Content Include="Content\eliteadmin\layout-fix-sidebar.html" />
-    <Content Include="Content\eliteadmin\layout-logo-center.html" />
-    <Content Include="Content\eliteadmin\layout-single-column.html" />
-    <Content Include="Content\eliteadmin\login.html" />
-    <Content Include="Content\eliteadmin\map-google.html" />
-    <Content Include="Content\eliteadmin\map-vector.html" />
-    <Content Include="Content\eliteadmin\pages-animation.html" />
-    <Content Include="Content\eliteadmin\pages-blank.html" />
-    <Content Include="Content\eliteadmin\pages-error-400.html" />
-    <Content Include="Content\eliteadmin\pages-error-403.html" />
-    <Content Include="Content\eliteadmin\pages-error-404.html" />
-    <Content Include="Content\eliteadmin\pages-error-500.html" />
-    <Content Include="Content\eliteadmin\pages-error-503.html" />
-    <Content Include="Content\eliteadmin\pages-faq.html" />
-    <Content Include="Content\eliteadmin\pages-fix-inner-right-sidebar.html" />
-    <Content Include="Content\eliteadmin\pages-fix-innersidebar.html" />
-    <Content Include="Content\eliteadmin\pages-gallery.html" />
-    <Content Include="Content\eliteadmin\pages-invoice.html" />
-    <Content Include="Content\eliteadmin\pages-lightbox-popup.html" />
-    <Content Include="Content\eliteadmin\pages-lockscreen.html" />
-    <Content Include="Content\eliteadmin\pages-login-2.html" />
-    <Content Include="Content\eliteadmin\pages-login.html" />
-    <Content Include="Content\eliteadmin\pages-pricing.html" />
-    <Content Include="Content\eliteadmin\pages-profile.html" />
-    <Content Include="Content\eliteadmin\pages-recover-password.html" />
-    <Content Include="Content\eliteadmin\pages-register.html" />
-    <Content Include="Content\eliteadmin\pages-register2.html" />
-    <Content Include="Content\eliteadmin\pages-register3.html" />
-    <Content Include="Content\eliteadmin\pages-scroll.html" />
-    <Content Include="Content\eliteadmin\pages-search-result.html" />
-    <Content Include="Content\eliteadmin\pages-treeview.html" />
-    <Content Include="Content\eliteadmin\pages-utility-classes.html" />
-    <Content Include="Content\eliteadmin\starter-kit.html" />
-    <Content Include="Content\eliteadmin\table-basic.html" />
-    <Content Include="Content\eliteadmin\table-bootstrap.html" />
-    <Content Include="Content\eliteadmin\table-data-table.html" />
-    <Content Include="Content\eliteadmin\table-editable-table.html" />
-    <Content Include="Content\eliteadmin\table-footable.html" />
-    <Content Include="Content\eliteadmin\table-jsgrid.html" />
-    <Content Include="Content\eliteadmin\table-layout.html" />
-    <Content Include="Content\eliteadmin\table-responsive.html" />
-    <Content Include="Content\eliteadmin\ui-bootstrap-switch.html" />
-    <Content Include="Content\eliteadmin\ui-bootstrap.html" />
-    <Content Include="Content\eliteadmin\ui-breadcrumb.html" />
-    <Content Include="Content\eliteadmin\ui-buttons.html" />
-    <Content Include="Content\eliteadmin\ui-cards.html" />
-    <Content Include="Content\eliteadmin\ui-carousel.html" />
-    <Content Include="Content\eliteadmin\ui-date-paginator.html" />
-    <Content Include="Content\eliteadmin\ui-dragable-portlet.html" />
-    <Content Include="Content\eliteadmin\ui-grid.html" />
-    <Content Include="Content\eliteadmin\ui-horizontal-timeline.html" />
-    <Content Include="Content\eliteadmin\ui-list-media.html" />
-    <Content Include="Content\eliteadmin\ui-modals.html" />
-    <Content Include="Content\eliteadmin\ui-nestable.html" />
-    <Content Include="Content\eliteadmin\ui-notification.html" />
-    <Content Include="Content\eliteadmin\ui-progressbar.html" />
-    <Content Include="Content\eliteadmin\ui-range-slider.html" />
-    <Content Include="Content\eliteadmin\ui-ribbons.html" />
-    <Content Include="Content\eliteadmin\ui-scrollspy.html" />
-    <Content Include="Content\eliteadmin\ui-session-ideal-timeout.html" />
-    <Content Include="Content\eliteadmin\ui-session-timeout.html" />
-    <Content Include="Content\eliteadmin\ui-spinner.html" />
-    <Content Include="Content\eliteadmin\ui-sweetalert.html" />
-    <Content Include="Content\eliteadmin\ui-tab.html" />
-    <Content Include="Content\eliteadmin\ui-timeline.html" />
-    <Content Include="Content\eliteadmin\ui-toasts.html" />
-    <Content Include="Content\eliteadmin\ui-tooltip-popover.html" />
-    <Content Include="Content\eliteadmin\ui-tooltip-stylish.html" />
-    <Content Include="Content\eliteadmin\ui-typography.html" />
-    <Content Include="Content\eliteadmin\ui-user-card.html" />
-    <Content Include="Content\eliteadmin\widget-apps.html" />
-    <Content Include="Content\eliteadmin\widget-charts.html" />
-    <Content Include="Content\eliteadmin\widget-data.html" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
