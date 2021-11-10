@@ -1,0 +1,120 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/eliteadmin/assets/images/favicon.png">
+    <title>Metin Yükleme</title>
+    <link href="~/Content/eliteadmin/dist/css/style.min.css" rel="stylesheet">
+    <link href="~/Content/eliteadmin/dist/css/pages/chat-app-page.css" rel="stylesheet">
+    <link href="~/Content/eliteadmin/assets/node_modules/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body class="skin-blue fixed-layout">
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Yükleniyor..</p>
+        </div>
+    </div>
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="~/Content/eliteadmin/index.html">
+                        <i style="font-size:24px" class="mdi mdi-folder-upload"></i>
+                    </a>
+                </div>
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"> <a class="nav-link nav-toggler d-block d-md-none waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                        <li class="nav-item"> <a class="nav-link sidebartoggler d-none d-lg-block d-md-block waves-effect waves-dark" href="javascript:void(0)"><i class="icon-menu"></i></a> </li>
+                      
+                    </ul>
+                    <ul class="navbar-nav my-lg-0">
+                        <li class="nav-item dropdown u-pro">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="~/Content/eliteadmin/assets/images/user.png" alt="user" class=""> <span class="hidden-md-down">@UserContext.Current.User.UserName &nbsp;</span> </a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <a href="/cikis" class="dropdown-item"><i class="ti-arrow-up"></i> Çıkış Yap</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="user-pro">
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src="~/Content/eliteadmin/assets/images/user.png" alt="user-img" class="img-circle"><span class="hide-menu">@UserContext.Current.User.UserName</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="/cikis"><i class="ti-arrow-up"></i> Çıkış Yap</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-small-cap">--- METİN GÖNDERME İŞLEMLERİ</li>
+                        <li>
+                            <a href="/dosyagonder" aria-expanded="false"><i class="mdi mdi-cloud-upload"></i> Metin Gönder</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+        </div>
+        <footer class="footer">
+            © @DateTime.Now.Year Metin Gönderme 
+        </footer>
+    </div>
+
+    <script>
+        function ShowMessage(message, type) {
+            if (type == "s") {
+                swal({
+                    title: 'İşlem Başarılı',
+                    text: message,
+                    type: 'success',
+                    showCancelButtonClass: 'btn-success',
+                    confirmButtonText: 'Tamam'
+                });
+            }
+            else {
+                swal({
+                    title: 'İşlem Başarısız',
+                    text: message,
+                    type: 'error',
+                    showCancelButtonClass: 'btn-danger',
+                    confirmButtonText: 'Tamam'
+                });
+            }
+        }
+
+    </script>
+
+
+    <script src="~/Content/eliteadmin/assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+    <script src="~/Content/eliteadmin/assets/node_modules/popper/popper.min.js"></script>
+    <script src="~/Content/eliteadmin/assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/eliteadmin/dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="~/Content/eliteadmin/dist/js/waves.js"></script>
+    <script src="~/Content/eliteadmin/dist/js/sidebarmenu.js"></script>
+    <script src="~/Content/eliteadmin/assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="~/Content/eliteadmin/assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
+    <script src="~/Content/eliteadmin/dist/js/custom.min.js"></script>
+    <script src="~/Content/eliteadmin/dist/js/pages/chat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+ 
+</body>
+</html>

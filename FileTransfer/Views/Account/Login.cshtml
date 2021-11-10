@@ -1,0 +1,106 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/eliteadmin/assets/images/favicon.png">
+    <title>Giriş</title>
+    <link href="~/Content/eliteadmin/dist/css/pages/login-register-lock.css" rel="stylesheet">
+    <link href="~/Content/eliteadmin/dist/css/style.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="skin-default card-no-border">
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Yükleniyor..</p>
+        </div>
+    </div>
+    <section id="wrapper">
+        <div class="login-register" style="background-image:url(../Content/eliteadmin/assets/images/background/login-register.jpg);">
+            <div class="login-box card">
+                <div class="card-body">
+                    <form class="form-horizontal form-material" id="loginform" method="post" action="/Account/Login">
+                        <h3 class="text-center m-b-20">Dosya Yükleme Sistemi</h3>
+                        <div class="form-group ">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="text" name="userName" autocomplete="off" required placeholder="Kullanıcı Adı" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <input class="form-control" autocomplete="off" type="password" name="Password"  required placeholder="Şifre">
+                            </div>
+                        </div>
+                       
+                        <div class="form-group text-center">
+                            <div class="col-xs-12 p-b-20">
+                                <button class="btn btn-block btn-lg btn-info btn-rounded" type="submit">Giriş Yap</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="~/Content/eliteadmin/assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+    <script src="~/Content/eliteadmin/assets/node_modules/popper/popper.min.js"></script>
+    <script src="~/Content/eliteadmin/assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var success = '@TempData["login"]';
+            if (success == "0") {
+                ShowMessage("Giriş yapılırken hata oluştu. Lütfen kullanıcı adı ve şifreyi tekrar deneyiniz !", 'e');
+            }
+        });
+
+
+        $(function() {
+            $(".preloader").fadeOut();
+        });
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+        $('#to-recover').on("click", function() {
+            $("#loginform").slideUp();
+            $("#recoverform").fadeIn();
+        });
+
+
+        function ShowMessage(message, type) {
+            if (type == "s") {
+                swal({
+                    title: 'İşlem Başarılı',
+                    text: message,
+                    type: 'success',
+                    showCancelButtonClass: 'btn-success',
+                    confirmButtonText: 'Tamam'
+                });
+            }
+            else {
+                swal({
+                    title: 'İşlem Başarısız',
+                    text: message,
+                    type: 'error',
+                    showCancelButtonClass: 'btn-danger',
+                    confirmButtonText: 'Tamam'
+                });
+            }
+        }
+
+    </script>
+
+</body>
+</html>

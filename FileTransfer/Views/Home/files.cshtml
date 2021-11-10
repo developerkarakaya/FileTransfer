@@ -1,0 +1,139 @@
+﻿@{
+    ViewBag.Title = "File";
+    Layout = "~/Views/_Shared/_Layout.cshtml";
+}
+@model IEnumerable<DataEntites.FileTransfer.FileDb>
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor">Dosya Yükleme</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-right">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Anasayfa</a></li>
+                <li class="breadcrumb-item active">Dosya Yükleme</li>
+            </ol>
+            <a class="btn btn-info d-none d-lg-block m-l-15" href="/dosyalistesi"> Dosya Listesine Dön</a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+       <div class="row" >
+           <div class="col-md-4">
+               <input type="search" id="mySearchInput" placeholder="Ara.." style="float:right;  margin-bottom:10px" class="form-control" />
+           </div>
+       </div>
+      
+        <div class="card m-b-0">
+            <!-- .chat-row -->
+            <div class="chat-main-box">
+                <div class="chat-right-aside">
+                    <div class="chat-main-header">
+                        <div class="p-3 b-b">
+                            <h4 class="box-title">Yüklenen Dosyalar</h4>
+                        </div>
+                     
+                    </div>
+                    <div class="chat-rbox">
+                        <ul class="chat-list p-3" style="height:400px" id="liData">
+                            @foreach (var i in Model)
+                            {
+                                <li>
+                                    <div class="chat-img"><img src="~/Content/eliteadmin/assets/images/user.png" alt="user" /></div>
+                                    <div class="chat-content">
+
+                                        @{
+                                using (var db = new DataEntites.FileTransfer.FileTransferEntitiess())
+                                {
+                                    string managerName = db.Manager.FirstOrDefault(ss => ss.Id == i.ManagerId).UserName;
+                                    <h5>
+                                        <strong>By </strong> @managerName
+                                    </h5>                           }
+                                        }
+                                        <div class="box bg-light-info">
+                                           @if (i.TextType.Length>150)
+                                           {
+                                            @i.TextType.Substring(0, 150)
+                                           }
+                                           else {
+                                           @i.TextType
+                                           }  <br />
+                                            @if (i.FileType != null)
+                                            {
+                                                <a target="_blank" href="@i.FileType"> Dosyayı İndir</a>
+                                            }
+                                        </div>
+                                        <div class="chat-time">@i.CreatedDate</div>
+                                        <hr />
+                                    </div>
+                                </li>
+                            }
+                            <hr />
+                        </ul>
+                    </div>
+                    <div class="card-body border-top">
+                        <div class="row">
+                            <form action="/Home/create" enctype="multipart/form-data" method="post">
+                                <input type="hidden" value="@UserContext.Current.User.Id" name="ManagerId" id="ManagerId" />
+                                <div class="row" >
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <input type="file" class="form-control" name="FileType" />
+                                    </div>
+                                    <br />
+                                    <div class="col-8" style="width:500px; margin-top:15px">
+                                        <textarea name="TextType" placeholder="Dosya Veya Metin Giriniz.." style="height:140px" class="form-control border-2"></textarea>
+                                    </div>
+                                    <div class="col-2 text-right">
+                                        <button type="submit" class="btn btn-info btn-small">
+                                           Dosya Gönder
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- .chat-right-panel -->
+            </div>
+            <!-- /.chat-row -->
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+</script>
+<script>
+    $(document).ready(function () {
+        var success = '@TempData["m"]';
+        if (success == "1") {
+            ShowMessage("Dosya yükleme işlemi başarıyla gerçekleşti.", 's');
+        }
+        else if (success == "0") {
+            ShowMessage("Dosya yükleme işlemi başarısız !", 'e');
+        }
+        else if (success == "none") {
+            ShowMessage("Lütfen dosya veya metin giriniz !!",'e');
+        }
+    });
+
+
+
+
+        $(document).ready(function () {
+            $("#mySearchInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#liData li").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+
+</script>
+
